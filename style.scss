@@ -171,7 +171,6 @@ nav {
     }
     a {
         text-decoration: none;
-        background: rgba(226, 0, 0, 0.7);
         &:hover {
             text-decoration: underline;
         }
@@ -341,6 +340,7 @@ ul {
 @media(max-width: 574px){
     .footer-col{
         width: 100%;
+        padding: 15px 15px;
     }
 }
 
