@@ -346,14 +346,23 @@ ul {
   background: #2e2829;
   color: white;
   outline: none;
+  z-index: 10;
 }
-
 #btnscrolltotop:hover {
   background: #3b3233;
 }
 
 .fas {
   font-size: 30px;
+}
+
+.carousel h1 {
+  text-align: center;
+  margin-bottom: 2%;
+}
+.carousel .container {
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */
