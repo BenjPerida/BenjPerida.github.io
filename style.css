@@ -38,7 +38,6 @@ nav .fas {
   display: inline-block;
   padding: 8px 12px;
   position: relative;
-  color: #fff;
   text-decoration: none;
   font-size: 13px;
 }
@@ -48,11 +47,15 @@ nav .fas {
   height: 2px;
   background: #ffd700;
   display: block;
-  margin: auto;
+  margin: 2px 0px;
   transition: 0.5s;
 }
 .nav-links ul li:hover::after {
   width: 100%;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .text-box {
@@ -90,6 +93,10 @@ nav .fas {
 @media (max-width: 700px) {
   .text-box h1 {
     font-size: 40px;
+  }
+
+  html, body {
+    overflow-x: hidden;
   }
 
   .nav-links {
@@ -325,8 +332,28 @@ ul {
 @media (max-width: 574px) {
   .footer-col {
     width: 100%;
-    padding: 15px 15px;
+    margin-bottom: 15px;
   }
+}
+#btnscrolltotop {
+  display: none;
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #2e2829;
+  color: white;
+  outline: none;
+}
+
+#btnscrolltotop:hover {
+  background: #3b3233;
+}
+
+.fas {
+  font-size: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */
