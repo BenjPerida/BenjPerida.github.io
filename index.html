@@ -13,21 +13,26 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="js/owl.carousel.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+
+
 </head>
 
 <body>
 
   <!-- carousel js -->
   <script>
+
     $(document).ready(function () {
 
       $('.owl-carousel').owlCarousel({
-        loop: true,
+        // loop: true,
         margin: 10,
-        nav: true, 
-        autoplay: true,
-        autoplayTimeout: 2000,
-        autoplayHoverPause: false,
+        nav: true,
+        // autoplay: true,
+        // autoplayTimeout: 2000,
+        // autoplayHoverPause: false,
         responsive: {
           0: {
             items: 1
@@ -38,6 +43,42 @@
         }
 
       });
+
+      var img = ["https://scontent.fmnl4-1.fna.fbcdn.net/v/t1.6435-9/153692513_2837548136484560_4461752285618254553_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=VtzKU_0qTS8AX-CzGNz&_nc_ht=scontent.fmnl4-1.fna&oh=00_AT8KGU1RlahsRqDIPYpfr2tcXF8oqvx1ROqGRCMogS9aHg&oe=621C2121"
+      ];
+
+      var $gallery = $(".owl-stage").first();
+      var $loadMore = $("#load");
+      console.log($loadMore);
+
+
+      function loadMore(e) {
+        console.log("log");
+
+        if (img.length) {
+
+          var src = img.pop();
+          var $img = $("<img>");
+          var $div = $("<div>");
+          var $divowl = $("<div>");
+
+          $img.attr("src", src);
+          $div.addClass("item");
+          $divowl.addClass("owl-item");
+          $divowl.addClass("owl-item-new");
+          
+          $div.append($img);
+          $divowl.append($div);
+          $gallery.append($divowl);
+
+          
+
+        } else {
+          $loadMore.hide;
+        }
+      }
+      $loadMore.on("click", loadMore);
+      
 
     });
 
@@ -140,7 +181,9 @@
           <img src="images/carousel/5.jpg" alt="no image">
         </div>
       </div>
+      <button id="load">Load More</button>
     </div>
+
 
   </section>
 
@@ -285,6 +328,13 @@
     });
 
   </script>
+
+  <!-- loadmore js -->
+  <script>
+
+
+  </script>
+
 
   <!-- -----JavaScript for ToggleMenu----- -->
   <script>
